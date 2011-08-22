@@ -1,1 +1,12 @@
 cd $PROJECTS/$1;
+PROJECT_ROOT=`pwd`
+WORKON_HOME="$HOME/.virtualenvs"
+ENV_NAME=`basename "$PROJECT_ROOT"`
+if [ -f "$PROJECT_ROOT/.venv" ]; then
+    ENV_NAME=`cat "$PROJECT_ROOT/.venv"`
+fi
+if [ "$VIRTUAL_ENV" != "$WORKON_HOME/$ENV_NAME" ]; then
+    if [ -e "$WORKON_HOME/$ENV_NAME/bin/activate" ]; then
+        . $WORKON_HOME/$ENV_NAME/bin/activate
+    fi
+fi
