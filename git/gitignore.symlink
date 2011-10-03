@@ -4,3 +4,5 @@
 *~
 *.swp
 *.rbc
+*/.zsh_history
+*.pyc
