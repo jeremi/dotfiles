@@ -1,0 +1,8 @@
+echo "My dotcloud"
+if [ -e "$WORKON_HOME/$ENV_NAME/var/dotcloud_config" ]; then
+	if [ -e "$HOME/.dotcloud" ]; then
+		rm $HOME/.dotcloud
+	fi
+	ln -s $WORKON_HOME/$ENV_NAME/var/dotcloud_config ~/.dotcloud
+fi
+/usr/local/bin/dotcloud $1 $2 $3
