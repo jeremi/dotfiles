@@ -2,7 +2,7 @@
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/wmp/Projects
+export PROJECTS=~/Projects
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
@@ -13,6 +13,12 @@ if [[ -a ~/.localrc ]]
 then
   source ~/.localrc
 fi
+
+#export PATH=/Users/jeremi/anaconda/bin:$PATH
+
+if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+source ~/.liquidprompt/liquidprompt
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
